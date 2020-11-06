@@ -41,6 +41,24 @@ class Account {
     friend ostream & operator<<(ostream &os, Account &acc);
 };
 
+long Account::NextAccountNumber=0;
+
+class Bank {
+    map<long,Account> accounts; // Using map STL to store values from data file. long is basically account number and Account contains account details for the corresponding account number
+
+    public:
+    Bank();
+    // Functions of Bank Program
+    Account OpenAccount(string fname, string lname, float balance);
+    Account BalanceEnquiry(long accountNumber);
+    Account Deposit(long accountNumber, float amount);
+    Account Withdraw(long accountNumber);
+    void CloseAccount(long account);
+    void ShowAllAccounts();
+    ~Bank();
+};
+
+}
 
 
 
