@@ -42,7 +42,7 @@ class Account {
 };
 
 long Account::NextAccountNumber=0;
-
+// Bank has multiple accounts, so we retrieve details from file and store it in map container.
 class Bank {
     map<long,Account> accounts; // Using map STL to store values from data file. long is basically account number and Account contains account details for the corresponding account number
 
@@ -169,7 +169,32 @@ int main()
         return NextAccountNumber;
     }
     
+    // To accept input and output of user defined objects we need to overload insertion and extraction operators
 
+    ofstream & operator<<(ofstream &ofs,Account &acc)
+    {
+        ofs<<acc.accountNumber<<endl;
+        ofs<<acc.firstName<<endl;
+        ofs<<acc.lastName<<endl;
+        ofs<<acc.balance<<endl;
+        return ofs;
+    }
+    ifstream & operator>>(ifstream &ifs,Account &acc)
+    {
+        ifs<<acc.accountNumber<<endl;
+        ifs<<acc.firstName<<endl;
+        ifs<<acc.lastName<<endl;
+        ifs<<acc.balance<<endl;
+        return ifs;
+    }
+     ostream & operator<<(ostream &os,Account &acc)
+    {
+        os<<"First Name:"<<acc.getFirstName()<<endl;
+        os<<"Last Name:"<<acc.firstName<<endl;
+        os<<"Account Number:"<<acc.lastName<<endl;
+        os<<"Balance:"<<acc.balance<<endl;
+        return os;
+    }
 
 
 
