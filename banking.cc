@@ -22,7 +22,7 @@ class Account {
     public:
 // Defining constructors
     Account(){}
-    Account(string fname, string lname, float balance)
+    Account(string fname, string lname, float balance);
     //Defining getter methods
     long getAccNo(){return accountNumber;}
     string getFirstName(){return firstName;}
@@ -181,10 +181,10 @@ int main()
     }
     ifstream & operator>>(ifstream &ifs,Account &acc)
     {
-        ifs<<acc.accountNumber<<endl;
-        ifs<<acc.firstName<<endl;
-        ifs<<acc.lastName<<endl;
-        ifs<<acc.balance<<endl;
+        ifs>>acc.accountNumber;
+        ifs>>acc.firstName;
+        ifs>>acc.lastName;
+        ifs>>acc.balance;
         return ifs;
     }
      ostream & operator<<(ostream &os,Account &acc)
@@ -277,8 +277,3 @@ Bank::~Bank()
  outfile.close();
 }
 
-
-
-
-
-}
