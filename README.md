@@ -1,6 +1,6 @@
 # Banking
 ![.github/workflows/cppcheck.yml](https://github.com/99002500/CPP-BANKING-PROJECT/workflows/.github/workflows/cppcheck.yml/badge.svg)   ![Valgrind](https://github.com/99002500/CPP-BANKING-PROJECT/workflows/Valgrind/badge.svg)
-***about project***
+    ***about project***
 ## Objective 
     Banking System Development
 ## Input
