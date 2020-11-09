@@ -7,7 +7,8 @@ on:                 #git event that triggers the git flow
 jobs:             #on event trigger job is assigned 
   build:
     runs-on: ubuntu-latest
-    steps:
+    steps:  
+    - uses: actions/checkout@v2
     - name: Install Make
       run: sudo apt-get install make
     - name: Install Gtest Framework
