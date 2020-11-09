@@ -1,0 +1,15 @@
+name: Unit Test
+
+on:                 #git event that triggers the git flow
+  push:
+    branches: [ master ]
+
+jobs:             #on event trigger job is assigned 
+  build:
+    runs-on: ubuntu-latest
+    steps:  
+    - uses: actions/checkout@v2
+    - name: Install Gtest Framework
+      run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make && sudo cp *.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
+    - name: Build
+      run: make out
