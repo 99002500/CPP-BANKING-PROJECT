@@ -1,4 +1,4 @@
-name: Unit Test
+name: Build
 
 on:                 #git event that triggers the git flow
   push:
