@@ -11,7 +11,7 @@ int main(int argc, char **argv) {
   return RUN_ALL_TESTS();
 }
 */
-#define _CMAKE_
+//#define _CMAKE_
 
 #ifdef DEBUG
 #define debug(msg) std::cout << msg << std::endl    
