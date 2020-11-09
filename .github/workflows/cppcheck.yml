@@ -3,10 +3,9 @@ on: [push]
 
 jobs:
   build:
-    name: cppcheck
     runs-on: ubuntu-latest
     steps:
       - name: Install cppcheck
         run: sudo apt-get -y install cppcheck
       - name: Cppcheck code
-        run: cppcheck 
+        run: cppcheck *.c*
