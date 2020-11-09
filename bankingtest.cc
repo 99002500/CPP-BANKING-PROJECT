@@ -1,13 +1,36 @@
-#include "banking.cc"
+#include "banking.h"
 #include <gtest/gtest.h>
+/*
+TEST(Account,DefaultConstructor) {
+    Account a1;
+    EXPECT_EQ(0.0,a1.getBalance());
+   
+}
+int main(int argc, char **argv) {
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}
+*/
+#define _CMAKE_
+
+#ifdef DEBUG
+#define debug(msg) std::cout << msg << std::endl    
+#else
+#define debug(msg) " "
+#endif
+
+#ifdef _CMAKE_
+#include "banking.cc"
+#endif
 
 TEST(Account,CreditTest) {
+    debug("Credit Test");
     Account a1("sam","Lippman",5000.0);
     a1.Deposit(3000);
     EXPECT_EQ(8000.0,a1.getBalance());
 
 }
-/*
+
 TEST(Account,DebitTest) {
     Account a1("sam","Lippman",5000.0);
     a1.Withdraw(1200);
@@ -21,12 +44,6 @@ TEST(Account,TransactionTest) {
     a1.Deposit(3000);
     EXPECT_EQ(8200.0,a1.getBalance()) << "Invalid Balance";
 }
-TEST(Account,DisplayTest) {
-    Account a1("sam","Lippman",5000.0);
-    std::string ExpectedOut="1001,Lippman,5000\n";
-    testing::internal::CaptureStdout();
-    a1.BalanceEnquiry(1001);
-    std::string ActualOut = testing::internal::GetCapturedStdout();
-    EXPECT_STREQ(ExpectedOut.c_str(), ActualOut.c_str());
-}
-*/
+
+
+
